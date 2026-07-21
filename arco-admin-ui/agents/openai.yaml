@@ -2,4 +2,4 @@ interface:
   display_name: "ui组业务组件"
   short_description: "生成中后台界面与业务组件 UI"
   brand_color: "#165DFF"
-  default_prompt: "Use $arco-admin-ui to design an admin dashboard page with sidebar layout."
+  default_prompt: "使用 ui组业务组件规范，设计带侧栏的中后台管理页面。"
