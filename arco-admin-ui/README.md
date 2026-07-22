@@ -130,6 +130,7 @@ arco-admin-ui/                 # 工具目录名（调用 ID）
     ops-patterns.md
     templates/
     theme-mode.md
+    sider-collapse.md
     do-dont.md
     image-prompts.md
     examples/*.png

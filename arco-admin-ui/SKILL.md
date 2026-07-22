@@ -23,7 +23,7 @@ description: >
 ## 硬约束
 
 - **顶栏必须**：通栏深蓝 #004EA2，白字系统名（按业务填写，勿固定示例名）+ 右侧工具区（见 [references/product-shell.md](references/product-shell.md)）
-- **菜单必须**：白底侧栏，选中项浅蓝底 #E6F1FF + 蓝色图标/文字
+- **菜单必须**：白底侧栏；选中 `#E6F1FF` + 主色图标/字；**默认可折叠**：展开 220 / 收起 **48 仅图标**；`Menu.collapse` 同步 `Sider.collapsed`；**禁止**侧栏与内容间灰滚动轨、双 trigger、默认 resize（强制读 [references/sider-collapse.md](references/sider-collapse.md)）
 - 主色按钮/链接默认 #165DFF（primary-6）；语义色/中性色见 [references/design-tokens.md](references/design-tokens.md)
 - **样式用法**（字号 14、四级灰、4 倍间距、圆角≤8、反馈层级、按钮唯一主 CTA）见 [references/style-usage.md](references/style-usage.md)
 - 组件 API 与 size 阶梯见 [references/components.md](references/components.md)；**单组件视觉（含 Avatar 等）**见 [references/component-visual.md](references/component-visual.md)
@@ -68,7 +68,7 @@ description: >
 
 ### A. 生成可运行界面代码
 
-1. 读 product-shell.md（锁壳）+ component-source.md（实现层组件用法）
+1. 读 product-shell.md（锁壳）+ **sider-collapse.md（侧栏折叠）** + component-source.md（实现层组件用法）
 2. **写 Page Spec**（page-spec.md）：类型、模块、接口占位、反馈文案来源
 3. 读 style-usage.md + design-tokens.md；明暗则 theme-mode.md
 4. 读 layout-patterns.md；工作台再读 content-ux.md
@@ -116,11 +116,13 @@ description: >
 | **代码模板** | templates/workbench.md、list.md、detail.md |
 | **抽屉 Drawer** | drawer-patterns.md |
 | **批量/空态/权限** | ops-patterns.md |
+| **侧栏折叠** | sider-collapse.md |
 
 
 ## 交付要求
 
 **必须先通过** [references/delivery-gates.md](references/delivery-gates.md)。
+含侧栏页额外过 [references/sider-collapse.md](references/sider-collapse.md) 第 5 节自检。
 
 
 - 明暗：需要时顶栏切换 + 变量色；顶栏保持 #004EA2

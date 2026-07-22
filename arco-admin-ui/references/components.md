@@ -15,7 +15,7 @@ Token 见 [design-tokens.md](design-tokens.md)。
 
 | 需求 | 组件 | 要点 |
 |------|------|------|
-| 整体框架 | Layout / Header / Sider / Content | Header 48-60；顶栏色见 product-shell |
+| 整体框架 | Layout / Header / Sider / Content | Header 48-60；**Sider 默认 collapsible 220↔48**，见 sider-collapse；顶栏色见 product-shell |
 | 导航 | Menu | 垂直；选中浅蓝底 |
 | 面包屑 | Breadcrumb | 二级及以上 |
 | 页头 | Typography + Space | 左标题右操作；有背景容器 |
@@ -56,6 +56,10 @@ Table / Pagination / Descriptions / Statistic / Tag / Avatar / Badge / Tree / Ti
 | 加载 | Spin / Skeleton |
 
 
+
+## 侧栏折叠
+
+默认可折叠侧栏，强制规范见 [sider-collapse.md](sider-collapse.md)。
 
 ## 批量 / 空态 / 抽屉
 

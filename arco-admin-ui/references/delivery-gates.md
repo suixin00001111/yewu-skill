@@ -4,7 +4,8 @@
 
 ## 壳与品牌
 
-- [ ] 顶栏 `#004EA2` 通栏白字；侧栏白底；选中 `#E6F1FF` + 蓝字/图标  
+- [ ] 顶栏 `#004EA2` 通栏白字；侧栏白底；选中 `#E6F1FF` + 蓝字/图标
+- [ ] 侧栏默认可折叠：展开~220 / 收起 48 仅图标；无侧栏与内容间独立灰滚动轨；仅一个折叠入口；Menu.collapse 已同步（见 sider-collapse）  
 - [ ] 主色按钮 `#165DFF`；无外部设计系统/厂商品牌文案  
 - [ ] 无 skill 规范注释、token 名刷在页面上  
 
@@ -31,4 +32,14 @@
 
 ## 图标
 
-- [ ] 业务图标 IconPark outline；非 Emoji 图标体系  
+- [ ] 业务图标 IconPark outline；非 Emoji 图标体系
+
+## 侧栏折叠（有侧栏的页面必过）
+
+- [ ] `collapsible` + `collapsedWidth={48}` + 展开约 220  
+- [ ] `Menu` 设置 `collapse` 与 Sider 同步；菜单项均有 icon  
+- [ ] 仅底部一个折叠入口  
+- [ ] **无**侧栏|内容之间的灰滚动轨 / resize 拖拽条  
+- [ ] Sider `overflow:hidden`，滚动只在菜单区  
+- [ ] Content `min-width:0`  
+

@@ -51,7 +51,8 @@
 ### A2. 左侧菜单 Menu（必须）
 
 - **浅色侧栏**：背景白 `#FFFFFF`，不要深色侧栏
-- 宽度展开约 **200–220px**，可折叠
+- 宽度展开 **220px**，收起 **48px**（仅图标）；**默认开启 collapsible**；折叠规范见 [sider-collapse.md](sider-collapse.md)（生成壳层必读）
+- **禁止**侧栏与内容之间出现独立灰滚动轨/双 trigger/误开 resize 拖拽条
 - 菜单项：左图标 + 文案；可分组、可展开（`SubMenu`）
 - **选中态（确定）**：
   - 背景：`#E6F1FF`（浅蓝底）
@@ -63,7 +64,7 @@
 实现提示：
 
 ```tsx
-<Sider width={220} style={{ background: '#fff', borderRight: '1px solid var(--color-border-2)' }}>
+<Sider width={220} collapsible collapsedWidth={48} theme="light" style={{ background: '#fff', borderRight: '1px solid var(--color-border-2)' }}>
   <Menu selectedKeys={['workbench']} style={{ border: 'none', padding: '8px' }}>
     <Menu.Item key="workbench" style={{ background: '#E6F1FF', color: '#165DFF', borderRadius: 4 }}>
       工作台
@@ -305,6 +306,7 @@ import { Steps } from '@/components'; // 实现层组件库入口（以项目为
 
 - [ ] 顶栏是否为通栏 `#004EA2` 白字？
 - [ ] 侧栏是否白底，选中是否浅蓝底 `#E6F1FF`？
+- [ ] 侧栏是否可折叠（220↔48 仅图标），无中间灰轨、无双折叠条？（sider-collapse）
 - [ ] 是否没有做成深色侧栏 / 白顶栏反转壳？
 - [ ] 列表页是否具备筛选 + 主按钮 + 表格 + 分页闭环？
 - [ ] 工作台是否以卡片分区而非大营销英雄区？
@@ -362,3 +364,6 @@ import { Steps } from '@/components'; // 实现层组件库入口（以项目为
 - 节点固定；**连接线 flex:1** 均分拉满；禁止挤在容器左侧一截。
 - 形态：节点 + 连接线；禁止箭头色块条。
 
+## 侧栏折叠（强制）
+
+完整规范与禁止坏例见 [sider-collapse.md](sider-collapse.md)。壳层生成必须包含可折叠 Sider，且通过该文自检。

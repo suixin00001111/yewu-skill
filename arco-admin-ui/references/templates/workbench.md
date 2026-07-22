@@ -20,6 +20,8 @@ async function fetchWorkbench() {
   };
 }
 
+// 侧栏折叠状态（壳层必有）
+// const [collapsed, setCollapsed] = useState(false);
 export default function WorkbenchPage() {
   const [loading, setLoading] = useState(true);
   const [data, setData] = useState<any>(null);
@@ -45,7 +47,7 @@ export default function WorkbenchPage() {
         {/* 右侧：主题切换、用户 */}
       </Header>
       <Layout>
-        <Sider theme="light" width={220} style={{ background: '#fff' }}>
+        <Sider theme="light" collapsible collapsedWidth={48} collapsible collapsedWidth={48} width={220} style={{ background: '#fff' }}>
           <Menu selectedKeys={['workbench']} style={{ background: '#fff' }}>
             <Menu.Item key="workbench">工作台</Menu.Item>
             {/* 选中态：浅蓝底 #E6F1FF + 主色字，按实现层 Menu 样式/覆盖 */}
@@ -90,3 +92,33 @@ export default function WorkbenchPage() {
   );
 }
 ```
+
+>
+
+### 壳层侧栏（强制可折叠）
+
+```tsx
+const [collapsed, setCollapsed] = useState(false);
+// ...
+<Layout hasSider style={{ flex: 1, minHeight: 0 }}>
+  <Sider
+    theme="light"
+    collapsible
+    collapsed={collapsed}
+    onCollapse={setCollapsed}
+    width={220}
+    collapsedWidth={48}
+    style={{ background: '#fff', borderRight: '1px solid var(--color-border-2)', overflow: 'hidden' }}
+  >
+    <Menu collapse={collapsed} selectedKeys={[/* ... */]} style={{ height: '100%', borderRight: 0 }}>
+      <Menu.Item key="..." icon={/* IconPark */}>菜单名</Menu.Item>
+    </Menu>
+  </Sider>
+  <Content style={{ flex: 1, minWidth: 0, overflow: 'auto', padding: 16, background: 'var(--color-fill-2)' }}>
+    {/* 页面内容 */}
+  </Content>
+</Layout>
+```
+
+规则见 [../sider-collapse.md](../sider-collapse.md)：禁止中间灰轨、双 trigger、Sider 外滚动。
+

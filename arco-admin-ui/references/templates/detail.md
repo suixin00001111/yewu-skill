@@ -52,7 +52,7 @@ export default function DetailPage({ id }: { id: string }) {
     <Layout style={{ height: '100vh' }}>
       <Header style={{ background: '#004EA2', color: '#fff' }}>业务系统</Header>
       <Layout>
-        <Sider theme="light" width={220}><Menu selectedKeys={['list']} /></Sider>
+        <Sider theme="light" collapsible collapsedWidth={48} width={220}><Menu selectedKeys={['list']} /></Sider>
         <Content style={{ padding: 16, background: 'var(--color-fill-2)' }}>
           {loading ? <Spin /> : (
             <>
@@ -116,3 +116,33 @@ export default function DetailPage({ id }: { id: string }) {
 ```css
 .modal-header { background: linear-gradient(180deg, #eaf0ff 0%, #ffffff 34%); }
 ```
+
+>
+
+### 壳层侧栏（强制可折叠）
+
+```tsx
+const [collapsed, setCollapsed] = useState(false);
+// ...
+<Layout hasSider style={{ flex: 1, minHeight: 0 }}>
+  <Sider
+    theme="light"
+    collapsible
+    collapsed={collapsed}
+    onCollapse={setCollapsed}
+    width={220}
+    collapsedWidth={48}
+    style={{ background: '#fff', borderRight: '1px solid var(--color-border-2)', overflow: 'hidden' }}
+  >
+    <Menu collapse={collapsed} selectedKeys={[/* ... */]} style={{ height: '100%', borderRight: 0 }}>
+      <Menu.Item key="..." icon={/* IconPark */}>菜单名</Menu.Item>
+    </Menu>
+  </Sider>
+  <Content style={{ flex: 1, minWidth: 0, overflow: 'auto', padding: 16, background: 'var(--color-fill-2)' }}>
+    {/* 页面内容 */}
+  </Content>
+</Layout>
+```
+
+规则见 [../sider-collapse.md](../sider-collapse.md)：禁止中间灰轨、双 trigger、Sider 外滚动。
+

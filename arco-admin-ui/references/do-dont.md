@@ -27,7 +27,7 @@
 
 - 内容区与模块 Card 统一内边距 16–20px；Descriptions/分块表不贴卡片边
 
-- **顶栏通栏 #004EA2 白字**；侧栏白底；菜单选中 #E6F1FF
+- **顶栏通栏 #004EA2 白字**；侧栏白底；菜单选中 #E6F1FF；折叠见 sider-collapse
 - 使用本规范实现层组件与 size / type / status 枚举
 - 主按钮 #165DFF，语义色 success/warning/danger 分明
 - 文字用四级灰色，不靠透明度硬造层级
@@ -38,6 +38,7 @@
 - 主按钮每个焦点区域仅一个
 - 进度：Progress 组件（当前主色 + 中性轨道）；业务阶段用 Steps
 - 弹窗顶栏背景：`linear-gradient(180deg, #eaf0ff 0%, #ffffff 34%)`
+- 侧栏：默认可折叠 220↔48 仅图标；过 sider-collapse 自检
 - 反馈：轻结果 **Message**（删除成功/保存成功/失败等顶部提示，见 message-patterns）；删除确认 Popconfirm/Modal；复杂表单 Drawer/整页
 - **删除成功必须 Message.success**，保存/提交成功同理；失败用 Message.error
 - 空状态 Empty；加载 Spin/Skeleton
@@ -77,6 +78,9 @@
 - 不要假暗色（只改底色、组件仍浅色/硬编码 Light 色）
 - 不要暗色下写死菜单选中 #E6F1FF 或顶栏非 #004EA2
 - 不要白顶栏+深色侧栏反转壳；不要渐变/玻璃顶栏
+- 不要侧栏收起后中间夹一条灰滚动轨/拖拽条；不要双折叠按钮；收起宽度用 48px 仅图标（sider-collapse）
+- 不要给 Sider 容器 `overflow:auto`；不要默认 `resizeDirections`；不要 Menu 不设 collapse 就收起 Sider
+- 不要收起后仍显示菜单文字导致挤压换行
 - 不要其它库默认皮肤整站冒充本规范
 - 不要 AI 紫渐变英雄区、大圆角玻璃卡、营销 Dashboard
 - 不要多 primary 并排；不要 16px+ 圆角与重拟态阴影

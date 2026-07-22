@@ -18,6 +18,7 @@
 | 状态 | loading / empty / error 如何表现 |
 | 反馈 | 成功/失败 Message 文案（可配置） |
 | 弹窗/抽屉 | 是否有确认、表单弹窗、侧滑；文案来源用户 |
+| 侧栏 | 默认可折叠 220↔48；Menu 与 Sider 同步（sider-collapse） |
 
 ## 2. 模板（复制填写）
 

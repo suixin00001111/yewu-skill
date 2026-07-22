@@ -17,7 +17,7 @@
 ```
 
 - **Header**：通栏深蓝 `#004EA2`，白字；整行通栏
-- **Sider**：白底，宽展开 ~200–220px；Menu 选中 `#E6F1FF`
+- **Sider**：**默认可折叠**；白底，展开 220px / 收起 48px 仅图标；Menu 选中 `#E6F1FF` 且 `collapse` 同步；**必读** [sider-collapse.md](sider-collapse.md)
 - **Content** 背景：`#F2F3F5` / `#F7F8FA`；内容卡片白底；内边距 16–24px
 
 参考图：`examples/workbench.png`、`table-list.png`、`detail-with-steps.png`、`detail-plain.png`
@@ -146,3 +146,4 @@
 - 页面契约：[page-spec.md](page-spec.md)
 - 模板：templates/
 - 闸门：delivery-gates.md
+- 侧栏折叠：sider-collapse.md
